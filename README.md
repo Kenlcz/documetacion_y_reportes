@@ -5,8 +5,8 @@ Incluye apuntes, análisis y reportes exportables en formato PDF para consulta.
 
 ## Objetivo
 
-Proveer documentaciones de manera explicativa y clara, aplicando buenas prácticas.
-Se busca facilitar la comprensión, reutilización y mantenimiento de los contenidos.
+Este repositorio contiene documentación técnica y guías prácticas para facilitar la **comprensión, reutilización y mantenimiento** de los contenidos.  
+La información está organizada en secciones temáticas, con ejemplos y referencias, para servir como material de apoyo en proyectos de ciberseguridad y operaciones de TI.
 
 ## Estructura
 
