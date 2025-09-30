@@ -7,8 +7,8 @@ lang: es
 fontsize: 11pt
 geometry: "left=3cm,right=3cm,top=2cm,bottom=1.7cm"
 toc-depth: 2
-colorlinks: true     
-linkcolor: blue      
+colorlinks: true
+linkcolor: blue
 urlcolor: blue
 titlepage: true
 tables: longtable
@@ -18,25 +18,31 @@ tables: longtable
 \newpage
 # Resumen ejecutivo
 
-Este reporte analiza el impacto del ataque de ransomware **WannaCry** en la organización **Telefónica España** durante mayo de 2017, utilizando 
-como marcos de referencia las guías de **ENISA**, el estándar **NIST SP 800-63B** y el marco de tácticas y técnicas **MITRE ATT&CK**. 
+Este informe analiza el impacto que tuvo el ransomware **WannaCry** en la empresa **Telefónica España** en mayo de 2017.
 
-WannaCry marcó un hito en la historia reciente de la ciberseguridad por su capacidad de propagación automática y por el daño causado a nivel global. 
+**Toda la información presentada fue recabada exclusivamente de fuentes públicas y oficiales**, incluyendo reportes de **Microsoft, ENISA, NIST, Europol, CISA, CERT-EU** y análisis 
+técnicos de proveedores de ciberseguridad.
+
+WannaCry fue uno de los ataques más relevantes de la última década porque combinó dos factores:
+
+- Su capacidad de propagarse automáticamente como un gusano.
+- Su impacto global, que afectó tanto a empresas como a servicios críticos.
+
 Telefónica fue una de las primeras grandes organizaciones europeas en verse afectada. La infección obligó a desconectar estaciones de trabajo de forma preventiva, 
 generó interrupciones operativas y expuso la falta de preparación frente a un ataque de estas características.
 
 Se identificaron riesgos principales en la organización:
 
-1. **Uso de sistemas obsoletos y vulnerables** con el protocolo SMBv1 habilitado.  
-2. **Demora en la aplicación del parche MS17-010**, que hubiera mitigado el vector de ataque.  
-3. **Red corporativa poco segmentada**, que facilitó la propagación lateral.  
-4. **Backups accesibles desde la misma red**, con riesgo de ser cifrados.  
-5. **Falta de telemetría y detección temprana**, lo que impidió responder a tiempo.  
+1. **Uso de sistemas obsoletos y vulnerables** con el protocolo SMBv1 habilitado.
+2. **Demora en la aplicación del parche MS17-010**, que hubiera mitigado el vector de ataque.
+3. **Red corporativa poco segmentada**, que facilitó la propagación lateral.
+4. **Backups accesibles desde la misma red**, con riesgo de ser cifrados.
+5. **Falta de telemetría y detección temprana**, lo que impidió responder a tiempo.
 
 Las recomendaciones propuestas incluyen controles técnicos y organizativos como la eliminación de SMBv1, la implementación de EDR y SIEM con capacidades de detección avanzada, 
 la segmentación de red, políticas estrictas de respaldo, autenticación multifactor para accesos privilegiados y planes de respuesta a incidentes ensayados regularmente. 
 
-El objetivo del presente documento es no solo documentar lo ocurrido, sino también ofrecer medidas concretas para reducir la probabilidad de que incidentes de esta magnitud se repitan en el futuro.  
+El objetivo del presente documento es no solo documentar lo ocurrido, sino también ofrecer medidas concretas para reducir la probabilidad de que incidentes de esta magnitud se repitan en el futuro.
 
 \newpage
 # Alcance y contexto
