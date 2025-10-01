@@ -20,8 +20,7 @@ tables: longtable
 
 Este informe analiza el impacto que tuvo el ransomware **WannaCry** en la empresa **Telefónica España** en mayo de 2017.
 
-**Toda la información presentada fue recabada exclusivamente de fuentes públicas y oficiales**, incluyendo reportes de **Microsoft, ENISA, NIST, Europol, CISA, CERT-EU** y análisis 
-técnicos de proveedores de ciberseguridad.
+**Toda la información presentada fue recabada exclusivamente de fuentes públicas y oficiales**, incluyendo reportes de **Microsoft, ENISA, NIST, Europol, CISA y CERT-EU**.
 
 WannaCry fue uno de los ataques más relevantes de la última década porque combinó dos factores:
 
