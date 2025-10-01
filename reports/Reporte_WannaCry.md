@@ -117,18 +117,19 @@ Este enfoque garantiza que las recomendaciones propuestas sean **concretas, veri
 El análisis del caso WannaCry en Telefónica puso de manifiesto múltiples debilidades que facilitaron la propagación del ataque y que son comunes en organizaciones de gran tamaño. Estos hallazgos se describen 
 en la siguiente tabla para mayor claridad:
 
-| Categoría            | Hallazgo principal                                                                 | Impacto observado |
-|----------------------|------------------------------------------------------------------------------------|-------------------|
-| Inventario           | Inexistencia de un inventario actualizado de activos vulnerables.                  | Dificultad para identificar rápidamente qué equipos eran críticos y vulnerables. |
-| Gestión de parches   | Retraso en la aplicación del parche MS17-010 publicado por Microsoft en marzo 2017. | Permitir que miles de equipos siguieran expuestos al exploit EternalBlue. |
-| Protocolos inseguros | Mantenimiento del protocolo SMBv1 habilitado en estaciones de trabajo y servidores. | Explotación inmediata de la vulnerabilidad y propagación automática del gusano. |
-| Segmentación de red  | Infraestructura con diseño de red plano y sin microsegmentación.                    | Permitir un movimiento lateral rápido hacia otras áreas de la red corporativa. |
-| Backups              | Respaldos accesibles desde la misma red de producción.                              | Riesgo de cifrado de copias de seguridad y pérdida de capacidad de recuperación. |
-| Telemetría           | Cobertura incompleta de EDR y correlaciones limitadas en el SIEM.                   | Falta de detección temprana de comportamientos anómalos de cifrado. |
-| Preparación           | Ausencia de simulacros de respuesta a incidentes y planes desactualizados.         | Retrasos en la coordinación interna durante las primeras horas del ataque. |
+| Categoría            | Hallazgo principal                                                                 | Impacto observado                                                                 |
+|----------------------|------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
+| Inventario           | Inexistencia de un inventario actualizado de activos vulnerables                   | Dificultad para identificar rápidamente qué equipos eran críticos y vulnerables   |
+| Gestión de parches   | Retraso en la aplicación del parche MS17-010 publicado por Microsoft en marzo 2017  | Miles de equipos siguieron expuestos al exploit EternalBlue                      |
+| Protocolos inseguros | Mantenimiento del protocolo SMBv1 habilitado en estaciones de trabajo y servidores | Explotación inmediata de la vulnerabilidad y propagación automática del gusano   |
+| Segmentación de red  | Diseño de red plano y sin microsegmentación                                         | Permitir un movimiento lateral rápido hacia otras áreas de la red corporativa    |
+| Telemetría           | Cobertura incompleta de EDR y correlaciones limitadas en el SIEM                   | Falta de detección temprana de comportamientos anómalos de cifrado               |
+| Backups              | Respaldos accesibles desde la misma red de producción                              | Riesgo de cifrado de copias de seguridad y pérdida de capacidad de recuperación   |
+| Preparación          | Ausencia de simulacros de respuesta a incidentes                                   | Retrasos en la coordinación interna durante las primeras horas del ataque        |
+| Plan de contingencia | Plan de respuesta a incidentes desactualizado y sin ensayos regulares               | Dificultad para contener, comunicar y recuperar servicios de forma eficiente      |
 <br />
 
-Estos hallazgos evidencian una combinación de factores técnicos y organizativos que contribuyeron a la magnitud del impacto.  
+Estos hallazgos evidencian una combinación de factores técnicos y organizativos que contribuyeron a la magnitud del impacto.
 
 \newpage
 # Análisis y mapeo MITRE ATT&CK
