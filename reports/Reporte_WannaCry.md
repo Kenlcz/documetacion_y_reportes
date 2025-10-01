@@ -40,9 +40,13 @@ Se identificaron riesgos principales en la organización:
 5. **Falta de telemetría y detección temprana**, lo que impidió responder a tiempo.
 
 Las recomendaciones propuestas incluyen controles técnicos y organizativos como la eliminación de SMBv1, la implementación de EDR y SIEM con capacidades de detección avanzada, 
-la segmentación de red, políticas estrictas de respaldo, autenticación multifactor para accesos privilegiados y planes de respuesta a incidentes ensayados regularmente. 
+la segmentación de red, políticas estrictas de respaldo, autenticación multifactor para accesos privilegiados y planes de respuesta a incidentes ensayados regularmente.
 
-El objetivo del presente documento es no solo documentar lo ocurrido, sino también ofrecer medidas concretas para reducir la probabilidad de que incidentes de esta magnitud se repitan en el futuro.
+ 
+# Objetivo
+
+El presente reporte tiene como objetivo analizar el ataque WannaCry en Telefónica España, identificar las debilidades que lo hicieron posible y proponer medidas de prevención, detección y recuperación.
+Todo el contenido se apoya en fuentes oficiales y públicas (Microsoft, ENISA, NIST, Europol, CISA, CERT-EU, entre otras) para garantizar la validez de la información.
 
 \newpage
 # Alcance y contexto
