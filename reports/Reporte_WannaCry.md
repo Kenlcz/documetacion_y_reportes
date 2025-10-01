@@ -53,23 +53,28 @@ Todo el contenido se apoya en fuentes oficiales y públicas (Microsoft, ENISA, N
 
 El alcance del presente reporte se limita al análisis del ataque de WannaCry en Telefónica España, considerando la infraestructura típica de una empresa de telecomunicaciones de gran porte.
 
-Se incluyen observaciones basadas en fuentes oficiales y reportes de organismos internacionales, tales como **ENISA**, **NIST**, **Europol**, **CISA**, así como documentos técnicos 
+Se incluyen observaciones basadas en fuentes oficiales y reportes de organismos internacionales, tales como **ENISA**, **NIST**, **Europol** y **CISA**, así como documentos técnicos 
 de **Microsoft** y de proveedores de ciberseguridad privados.
 
 ## Contexto internacional
 
 El ataque de WannaCry no se limitó a Telefónica. Se estima que afectó a más de **200.000 equipos en 150 países** en cuestión de días. Entre los casos más notorios se encuentran:
 
-- El **Servicio Nacional de Salud (NHS) del Reino Unido**, que tuvo que cancelar consultas médicas y cirugías por la indisponibilidad de sistemas.  
-- La automotriz **Renault**, que suspendió temporalmente la producción en varias plantas de Francia.  
-- La empresa de logística **FedEx** en Estados Unidos, que reportó retrasos significativos en la entrega de paquetes.  
+- El **Servicio Nacional de Salud (NHS) del Reino Unido**, que tuvo que cancelar consultas médicas y cirugías por la indisponibilidad de sistemas.
+- La automotriz **Renault**, que suspendió temporalmente la producción en varias plantas de Francia.
+- La empresa de logística **FedEx** en Estados Unidos, que reportó retrasos significativos en la entrega de paquetes.
 
 Estos ejemplos muestran que WannaCry trascendió el ámbito empresarial y afectó a sectores críticos como la salud, la industria y la logística.
 
 ## Vector de ataque
 
-WannaCry explotó la vulnerabilidad **MS17-010 (EternalBlue)** en el protocolo **SMBv1** de Windows. Este vector de ataque le permitió obtener ejecución remota de código y propagarse 
-automáticamente sin intervención del usuario. A diferencia de otros ransomware de la época, WannaCry combinó el cifrado de archivos con la capacidad de gusano, lo que multiplicó exponencialmente su alcance.
+El ataque de WannaCry puede entenderse como un vector con tres elementos:
+
+- Inicio: vulnerabilidad MS17-010 (EternalBlue) en el protocolo SMBv1 de Windows.
+- Sentido: cifrado de los archivos en el sistema afectado.
+- Dirección: replicarse a otros equipos de la red mediante el puerto 445/TCP.
+
+A diferencia de otros ransomware de la época, WannaCry combinó cifrado con capacidad de gusano, lo que multiplicó exponencialmente su alcance.
 
 ## Relevancia para Telefónica
 
