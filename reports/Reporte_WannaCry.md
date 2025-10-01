@@ -84,38 +84,38 @@ El ataque impactó principalmente a los equipos de usuario, pero generó gran re
 \newpage
 # Metodología
 
-La elaboración del presente reporte se realizó siguiendo un **enfoque estructurado y alineado con buenas prácticas internacionales**, de forma similar al reporte de ENISA aplicado a Microsoft 365/Azure. 
+La elaboración del presente reporte se realizó siguiendo un **enfoque estructurado y alineado con buenas prácticas internacionales(listadas anteriormente)**, de forma similar al reporte de ENISA aplicado a Microsoft 365/Azure. 
 
 Las fases metodológicas fueron las siguientes:
 
-1. **Recolección de información**  
-   Se consultaron fuentes oficiales de Microsoft, alertas de CISA/US-CERT, reportes de ENISA, NIST y Europol, además de análisis técnicos de empresas de seguridad reconocidas como Symantec y Kaspersky.  
+1. **Recolección de información**
+   Se consultaron fuentes oficiales de Microsoft, alertas de CISA/US-CERT, reportes de ENISA, NIST y Europol, además de análisis técnicos de empresas de seguridad reconocidas como Symantec y Kaspersky.
 
-2. **Análisis técnico del ataque**  
-   Se estudió el funcionamiento de WannaCry, incluyendo la explotación de EternalBlue, la propagación por SMBv1 y el proceso de cifrado de archivos en los equipos comprometidos.  
+2. **Análisis técnico del ataque**
+   Se estudió el funcionamiento de WannaCry, incluyendo la explotación de EternalBlue, la propagación por SMBv1 y el proceso de cifrado de archivos en los equipos comprometidos.
 
-3. **Mapeo a MITRE ATT&CK**  
-   Se relacionaron las tácticas y técnicas utilizadas con los identificadores oficiales de MITRE ATT&CK, para establecer trazabilidad con un marco de referencia reconocido.  
+3. **Mapeo a MITRE ATT&CK**
+   Se relacionaron las tácticas y técnicas utilizadas con los identificadores oficiales de MITRE ATT&CK, para establecer trazabilidad con un marco de referencia reconocido.
 
-4. **Revisión de controles de seguridad existentes**  
-   Se evaluaron las medidas que Telefónica tenía disponibles en 2017, identificando brechas que permitieron la propagación del ataque.  
+4. **Revisión de controles de seguridad existentes**
+   Se evaluaron las medidas que Telefónica tenía disponibles en 2017, identificando brechas que permitieron la propagación del ataque.
 
-5. **Diseño de controles propuestos**  
-   Se definieron recomendaciones alineadas a ENISA, NIST SP 800-63B y Microsoft, orientadas a la prevención, detección y recuperación frente a ransomware.  
+5. **Diseño de controles propuestos**
+   Se definieron recomendaciones alineadas a ENISA, NIST SP 800-63B y Microsoft, orientadas a la prevención, detección y recuperación frente a ransomware.
 
-6. **Evaluación de riesgo residual y priorización**  
-   Se analizaron los riesgos que permanecerían incluso después de aplicar los controles, y se estableció una priorización temporal de medidas inmediatas, a mediano y largo plazo.  
+6. **Evaluación de riesgo residual y priorización**
+   Se analizaron los riesgos que permanecerían incluso después de aplicar los controles, y se estableció una priorización temporal de medidas inmediatas, a mediano y largo plazo.
 
-7. **Elaboración de anexos técnicos**  
+7. **Elaboración de anexos técnicos**
    Se desarrollaron consultas de hunting (KQL), ejemplos de firmas IDS/IPS, fragmentos de políticas de red y backup en formato YAML/JSON, y un checklist de auditoría para verificar la correcta implementación de las medidas.  
 
-Este enfoque garantiza que las recomendaciones propuestas sean **concretas, verificables y aplicables** a entornos corporativos reales.  
+Este enfoque garantiza que las recomendaciones propuestas sean **concretas, verificables y aplicables** a entornos corporativos reales.
 
 \newpage
 # Hallazgos
 
-El análisis del caso WannaCry en Telefónica puso de manifiesto múltiples debilidades que facilitaron la propagación del ataque y que son comunes en organizaciones de gran tamaño. Estos hallazgos se describen de manera narrativa, 
-pero se resumen también en la siguiente tabla para mayor claridad:
+El análisis del caso WannaCry en Telefónica puso de manifiesto múltiples debilidades que facilitaron la propagación del ataque y que son comunes en organizaciones de gran tamaño. Estos hallazgos se describen 
+en la siguiente tabla para mayor claridad:
 
 | Categoría            | Hallazgo principal                                                                 | Impacto observado |
 |----------------------|------------------------------------------------------------------------------------|-------------------|
