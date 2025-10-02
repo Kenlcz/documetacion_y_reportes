@@ -276,6 +276,8 @@ Como recomendación final, se propone institucionalizar una cultura de ciberresi
 Solo mediante este enfoque integral se puede asegurar que la organización esté preparada para enfrentar no solo amenazas similares a WannaCry, 
 sino también las variantes más avanzadas de ransomware y otros ataques emergentes.
 
+“Este análisis se basó únicamente en información pública y disponible de manera abierta, sin acceso a datos internos de Telefónica.”
+
 
 # Referencias
 
