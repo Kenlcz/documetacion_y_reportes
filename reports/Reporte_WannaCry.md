@@ -149,28 +149,32 @@ El mapeo ATT&CK permite establecer una trazabilidad clara entre el comportamient
 \newpage
 # Controles propuestos
 
-En base a los hallazgos anteriores, se proponen controles alineados con **ENISA**, **NIST SP 800-63B** y con las capacidades disponibles en **Microsoft 365/Azure**. 
-Estos controles se dividen en tres categorías: preventivos, detectivos y de recuperación.
+En base a los hallazgos anteriores, se proponen controles alineados con **ENISA**, **NIST SP 800-63B**, **OWASP SAMM** y con las capacidades disponibles en **Microsoft 365/Azure**. 
+El orden de los controles se presenta siguiendo la estructura de OWASP SAMM: Gobernanza, Diseño, Implementación, Verificación y Operaciones.
 
-## Controles preventivos
+## Gobernanza
+- **Inventario actualizado de activos:** mantener un inventario dinámico para identificar sistemas vulnerables y priorizar acciones (ENISA).
+- **Plan de contingencia actualizado:** mantener y revisar anualmente un plan de respuesta a incidentes, con simulacros regulares que aseguren la coordinación efectiva (ENISA / OWASP SAMM).
 
-- **Gestión de vulnerabilidades y parches:** establecer un proceso que asegure la aplicación de parches críticos en menos de 48 horas.  
-- **Eliminación de SMBv1:** deshabilitar el protocolo en todos los equipos y bloquear el puerto 445 en firewalls internos.  
-- **Inventario actualizado:** mantener un inventario dinámico de activos para identificar sistemas vulnerables.  
-- **Privilegios mínimos y autenticación fuerte:** aplicar el principio de menor privilegio y habilitar MFA en cuentas administrativas.  
-- **Hardening de sistemas:** uso de imágenes base seguras y auditorías periódicas de configuración.  
+## Diseño
+- **Segmentación de red:** implementar microsegmentación para reducir el movimiento lateral de amenazas (ENISA).
+- **Seguridad en el SDLC:** incorporar prácticas de seguridad desde la fase de diseño, incluyendo revisión de arquitectura y análisis de riesgos (OWASP SAMM).
 
-## Controles detectivos
+## Implementación
+- **Gestión de vulnerabilidades y parches:** aplicar parches críticos en menos de 48 horas para reducir la exposición a exploits como EternalBlue (ENISA).
+- **Eliminación de SMBv1:** deshabilitar el protocolo en todos los equipos y bloquear el puerto 445 en firewalls internos (Microsoft / ENISA).
+- **Hardening de sistemas:** uso de imágenes base seguras y auditorías periódicas de configuración (ENISA / Microsoft).
+- **Privilegios mínimos y MFA:** aplicar el principio de menor privilegio y habilitar MFA en cuentas administrativas, según NIST SP 800-63B.
 
-- **EDR con detección de cifrado masivo:** herramientas como Microsoft Defender for Endpoint permiten detectar patrones de ransomware.  
-- **SIEM con correlaciones específicas:** Microsoft Sentinel u otros SIEM deben tener reglas de correlación para detectar escaneos SMB o procesos de cifrado inusuales.  
-- **Monitoreo de red:** detección de tráfico anómalo en el puerto 445/TCP, uso de honeypots y firmas IDS/IPS para EternalBlue.  
+## Verificación
+- **EDR con detección de cifrado masivo:** desplegar soluciones como Microsoft Defender for Endpoint para identificar patrones de ransomware.
+- **SIEM con correlaciones específicas:** configurar Microsoft Sentinel u otros SIEM para detectar escaneos SMB y procesos de cifrado anómalos.
+- **Monitoreo de red:** implementar detección de tráfico anómalo en el puerto 445/TCP, honeypots y firmas IDS/IPS para EternalBlue.
 
-## Controles de recuperación
-
-- **Backups inmutables y aislados:** aplicar la regla 3-2-1 y mantener al menos una copia offline o air-gapped.  
-- **Pruebas periódicas de restauración:** validar que los respaldos cumplen con RTO y RPO definidos.  
-- **Playbooks de respuesta:** guías claras para aislamiento de equipos, preservación de evidencias y comunicación interna.  
+## Operaciones
+- **Backups inmutables y aislados:** aplicar la regla 3-2-1 y mantener al menos una copia offline o air-gapped (ENISA).  
+- **Pruebas periódicas de restauración:** validar regularmente que los respaldos cumplen con RTO y RPO definidos.
+- **Playbooks y plan de respuesta:** diseñar y ensayar guías claras para aislamiento de equipos, preservación de evidencias, comunicación interna y continuidad del negocio (ENISA).  
 
 \newpage
 ## Mapeo de controles a riesgos y ATT&CK
@@ -191,7 +195,7 @@ Estos controles constituyen una estrategia de **defensa en profundidad**, que co
 \newpage
 # Actor atribuido: Lazarus Group
 
-El ataque WannaCry ha sido atribuido a **Lazarus Group**, un actor de amenazas avanzado vinculado a Corea del Norte.  
+El ataque WannaCry ha sido atribuido a **Lazarus Group**, un actor de amenazas avanzado vinculado a Corea del Norte.
 Este grupo se caracteriza por combinar motivaciones económicas con fines disruptivos y geopolíticos.
 
 | Característica        | Detalle |
@@ -224,17 +228,17 @@ Estos IoCs deben integrarse en un **SIEM** para generar alertas automáticas y f
 
 Se recomienda un plan de pruebas periódicas para asegurar que los controles implementados son efectivos:
 
-1. **Simulacros controlados de ransomware** → evaluar tiempo de detección (MTTD) y respuesta (MTTR).  
-2. **Pruebas de restauración de backups** → validar cumplimiento de RTO/RPO.  
-3. **Ejecución de hunting queries en SIEM** (ej. KQL en Sentinel).  
-4. **Validación de políticas de acceso condicional** → asegurar que bloquean protocolos inseguros.  
-5. **Revisión trimestral de configuración de EDR y firewalls**.  
-6. **Auditoría anual de cumplimiento de ENISA/NIST**.  
+1. **Simulacros controlados de ransomware** → evaluar tiempo de detección (MTTD) y respuesta (MTTR).
+2. **Pruebas de restauración de backups** → validar cumplimiento de RTO/RPO.
+3. **Ejecución de hunting queries en SIEM** (ej. KQL en Sentinel).
+4. **Validación de políticas de acceso condicional** → asegurar que bloquean protocolos inseguros.
+5. **Revisión trimestral de configuración de EDR y firewalls**.
+6. **Auditoría anual de cumplimiento de ENISA/NIST**.
 
-**KPIs sugeridos:**  
-- MTTD < 15 minutos.  
-- MTTR < 4 horas.  
-- ≥95% de hosts parcheados en 48h.  
+**KPIs sugeridos:**
+- MTTD < 15 minutos.
+- MTTR < 4 horas.
+- ≥95% de hosts parcheados en 48h.
 
 \newpage
 # Riesgo residual y priorización
@@ -252,21 +256,21 @@ Aunque los controles propuestos reducen significativamente el riesgo, persisten 
 
 **Priorización temporal:**
 
-- **0–30 días:** deshabilitar SMBv1, aplicar MS17-010, aislar backups, ajustar reglas de EDR/SIEM.  
-- **1–6 meses:** migrar sistemas legacy, automatizar parcheo, ampliar telemetría SOC.  
-- **6–12+ meses:** implementar microsegmentación y realizar ejercicios regulares de respuesta a incidentes.  
+- **0–30 días:** deshabilitar SMBv1, aplicar MS17-010, aislar backups, ajustar reglas de EDR/SIEM.
+- **1–6 meses:** migrar sistemas legacy, automatizar parcheo, ampliar telemetría SOC.
+- **6–12+ meses:** implementar microsegmentación y realizar ejercicios regulares de respuesta a incidentes.
 
 \newpage
 # Conclusiones
 
-- El ataque WannaCry a Telefónica evidenció cómo la falta de parches críticos puede derivar en un impacto global.  
-- La combinación de **parcheo inmediato, segmentación de red, EDR avanzado y backups inmutables** constituye la base para resistir ataques de ransomware.  
-- Marcos como **ENISA** y **NIST SP 800-63B**, junto con el mapeo de **MITRE ATT&CK**, permiten estructurar una defensa en profundidad.  
-- Si bien Telefónica logró contener el ataque, el incidente demostró la necesidad de planes de contingencia más sólidos y una gobernanza de seguridad proactiva.  
+- El ataque WannaCry a Telefónica evidenció cómo la falta de parches críticos puede derivar en un impacto global.
+- La combinación de **parcheo inmediato, segmentación de red, EDR avanzado y backups inmutables** constituye la base para resistir ataques de ransomware.
+- Marcos como **ENISA** y **NIST SP 800-63B**, junto con el mapeo de **MITRE ATT&CK**, permiten estructurar una defensa en profundidad.
+- Si bien Telefónica logró contener el ataque, el incidente demostró la necesidad de planes de contingencia más sólidos y una gobernanza de seguridad proactiva.
 
 En términos de lecciones aprendidas, WannaCry demostró que la gestión proactiva de vulnerabilidades y la actualización constante de sistemas no es opcional, 
 sino un requisito crítico para la continuidad de negocio. Asimismo, la necesidad de segmentar redes, aislar respaldos y entrenar al personal en planes de contingencia se vuelve fundamental 
-para reducir el impacto de futuros incidentes.  
+para reducir el impacto de futuros incidentes.
 
 Como recomendación final, se propone institucionalizar una cultura de ciberresiliencia que combine controles técnicos robustos con procesos de mejora continua y capacitación de usuarios. 
 Solo mediante este enfoque integral se puede asegurar que la organización esté preparada para enfrentar no solo amenazas similares a WannaCry, 
@@ -275,15 +279,15 @@ sino también las variantes más avanzadas de ransomware y otros ataques emergen
 
 # Referencias
 
-- [ENISA — WannaCry Ransomware (2017)](https://www.enisa.europa.eu/news/enisa-news/wannacry-ransomware-first-ever-case-of-cyber-cooperation-at-eu-level)  
-- [NIST SP 800-63B — Digital Identity Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html)  
-- [Microsoft — MS17-010 Security Bulletin](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010)  
-- [Europol — WannaCry overview and impact](https://www.europol.europa.eu/wannacry-ransomware)  
-- [CISA / US-CERT — Indicators Associated With WannaCry Ransomware](https://www.cisa.gov/news-events/alerts/2017/05/12/indicators-associated-wannacry-ransomware)  
-- [CERT-EU — Security Advisory SA2017-012](https://cert.europa.eu/static/SecurityAdvisories/2017/CERT-EU-SA2017-012.pdf)  
-- [Symantec (Broadcom) — WannaCry Threat Report](https://docs.broadcom.com/docs/istr-ransomware-2017-en)  
-- [Kaspersky — WannaCry Chronology and Technical Analysis](https://usa.kaspersky.com/resource-center/threats/ransomware-wannacry)  
-- [Reuters — Telefónica and Spanish firms hit by ransomware attack](https://www.reuters.com/article/technology/telefonica-other-spanish-firms-hit-in-ransomware-attack-idUSKBN1881US)  
+- [ENISA — WannaCry Ransomware (2017)](https://www.enisa.europa.eu/news/enisa-news/wannacry-ransomware-first-ever-case-of-cyber-cooperation-at-eu-level)
+- [NIST SP 800-63B — Digital Identity Guidelines](https://pages.nist.gov/800-63-3/sp800-63b.html)
+- [Microsoft — MS17-010 Security Bulletin](https://learn.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-010)
+- [Europol — WannaCry overview and impact](https://www.europol.europa.eu/wannacry-ransomware)
+- [CISA / US-CERT — Indicators Associated With WannaCry Ransomware](https://www.cisa.gov/news-events/alerts/2017/05/12/indicators-associated-wannacry-ransomware)
+- [CERT-EU — Security Advisory SA2017-012](https://cert.europa.eu/static/SecurityAdvisories/2017/CERT-EU-SA2017-012.pdf)
+- [Symantec (Broadcom) — WannaCry Threat Report](https://docs.broadcom.com/docs/istr-ransomware-2017-en)
+- [Kaspersky — WannaCry Chronology and Technical Analysis](https://usa.kaspersky.com/resource-center/threats/ransomware-wannacry)
+- [Reuters — Telefónica and Spanish firms hit by ransomware attack](https://www.reuters.com/article/technology/telefonica-other-spanish-firms-hit-in-ransomware-attack-idUSKBN1881US)
 
 \newpage
 # Anexos técnicos
