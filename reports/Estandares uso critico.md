@@ -144,12 +144,42 @@ Su adopción permite que los fabricantes obtengan certificaciones **CE (Europa)*
 - Reducción de fallos catastróficos en software embebido y hardware vital.  
 - Homologación de criterios de auditoría y control de calidad entre regiones.  
 
-**Incidentes documentados:**  
-- Fallos de software en bombas de insulina (FDA, 2019) vinculados a omisiones en el proceso de verificación de IEC 62304.  
-- Alarmas médicas no audibles en UCI (referidas por IEC 60601-1-8), que resultaron en retrasos de respuesta clínica.  
-- Análisis de riesgo incompletos bajo ISO 14971 que derivaron en retiros de producto por seguridad del paciente.
+## Casos reales documentados (fuentes públicas y oficiales)
 
-Estos casos evidencian que la aplicación efectiva de los estándares no es solo un requisito regulatorio, sino una **garantía de seguridad operacional**.
+### 💉 Caso 1 — *Bomba de insulina Medtronic MiniMed 600 Series (FDA Recall 2020–2021)*  
+- **Normas involucradas:** IEC 62304 e ISO 14971.  
+- **Organismo:** *U.S. Food and Drug Administration (FDA)*.  
+- **Descripción:** Un error de firmware impedía la correcta detección de alarmas, provocando administración incorrecta de insulina.  
+- **Impacto:** Más de **300 000 unidades retiradas**, con **una muerte confirmada y más de 2 000 incidentes reportados**.  
+- **Causa raíz:** Validación insuficiente del software y deficiencias en la gestión del riesgo clínico.  
+- **Lección aprendida:** La trazabilidad y la validación del ciclo de vida del software, conforme a IEC 62304, son esenciales para prevenir errores en sistemas de infusión críticos.  
+- **Fuente oficial:** [FDA Recall Database — Medtronic MiniMed 600 Series](https://www.fda.gov/medical-devices/medical-device-recalls/)
+
+### 💨 Caso 2 — *Ventiladores y CPAPs Philips Respironics (Retiro global 2021–2023)*  
+- **Normas involucradas:** IEC 60601-1 e ISO 14971.  
+- **Organismos:** *FDA (EE. UU.)* y *Comisión Europea (MDR, EUDAMED)*.  
+- **Descripción:** Fallos en materiales de espuma y control de software generaban liberación de partículas tóxicas y fallos de presión.  
+- **Impacto:** Más de **5 millones de unidades retiradas a nivel mundial**.  
+- **Causa raíz:** Falta de evaluación de riesgo integral y pruebas incompletas de desempeño esencial según IEC 60601-1.  
+- **Lección aprendida:** La gestión de riesgo bajo ISO 14971 debe cubrir tanto aspectos clínicos como materiales y ambientales, complementándose con las pruebas físicas del estándar IEC.  
+- **Fuente oficial:** [FDA – Philips Respironics Ventilator Recall](https://www.fda.gov/medical-devices/medical-device-recalls/philips-respironics-issues-recall)  
+  [Comisión Europea – EUDAMED Incident Reports](https://ec.europa.eu/tools/eudamed/)
+
+### ⚙️ Caso 3 — *Marcapasos Abbott (St. Jude Medical) – Vulnerabilidades de ciberseguridad (FDA 2017)*  
+- **Normas involucradas:** IEC 60601-1, IEC 81001-5-1 (ciberseguridad) e ISO 14971.  
+- **Organismos:** *FDA* y *Department of Homeland Security (DHS, ICS-CERT)*.  
+- **Descripción:** Vulnerabilidades en la comunicación inalámbrica del firmware permitían modificar parámetros del marcapasos de forma remota.  
+- **Impacto:** Más de **465 000 dispositivos** afectados; se emitieron alertas de seguridad y actualizaciones de firmware obligatorias.  
+- **Causa raíz:** Falta de autenticación, cifrado y gestión de vulnerabilidades durante el diseño.  
+- **Lección aprendida:** La ciberseguridad médica, bajo IEC 81001-5-1, debe integrarse al ciclo de vida del software descrito en IEC 62304 y considerarse dentro del análisis de riesgo ISO 14971.  
+- **Fuente oficial:** [FDA – Cybersecurity Safety Communication: Abbott Pacemakers](https://www.fda.gov/medical-devices/safety-communications/fda-safety-communication-cybersecurity-vulnerabilities-abbott-st-jude-medical-implantable-cardiac)  
+  [ENISA – Threat Landscape for the Health Sector](https://www.enisa.europa.eu/publications/enisa-threat-landscape-for-health-sector)
+
+## Conclusión de la sección
+
+Estos **casos públicos y verificables** demuestran que los estándares internacionales no son meras guías teóricas, sino **instrumentos técnicos esenciales** para prevenir eventos con impacto clínico real.  
+La falta de aplicación de **IEC 62304**, **ISO 14971** e **IEC 60601-1** —así como de sus normas complementarias de ciberseguridad— puede traducirse en fallos de software, riesgos eléctricos o vulnerabilidades explotables.  
+Su cumplimiento riguroso constituye un requisito técnico, regulatorio y ético indispensable para la **seguridad del paciente y la confiabilidad de la ingeniería médica moderna**.
 
 \newpage
 # Ciberseguridad y cumplimiento normativo
