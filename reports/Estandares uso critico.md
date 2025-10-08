@@ -146,7 +146,7 @@ Su adopción permite que los fabricantes obtengan certificaciones **CE (Europa)*
 
 ## Casos reales documentados (fuentes públicas y oficiales)
 
-### 💉 Caso 1 — *Bomba de insulina Medtronic MiniMed 600 Series (FDA Recall 2020–2021)*  
+### Caso 1 — *Bomba de insulina Medtronic MiniMed 600 Series (FDA Recall 2020–2021)*  
 - **Normas involucradas:** IEC 62304 e ISO 14971.  
 - **Organismo:** *U.S. Food and Drug Administration (FDA)*.  
 - **Descripción:** Un error de firmware impedía la correcta detección de alarmas, provocando administración incorrecta de insulina.  
@@ -155,7 +155,7 @@ Su adopción permite que los fabricantes obtengan certificaciones **CE (Europa)*
 - **Lección aprendida:** La trazabilidad y la validación del ciclo de vida del software, conforme a IEC 62304, son esenciales para prevenir errores en sistemas de infusión críticos.  
 - **Fuente oficial:** [FDA Recall Database — Medtronic MiniMed 600 Series](https://www.fda.gov/medical-devices/medical-device-recalls/)
 
-### 💨 Caso 2 — *Ventiladores y CPAPs Philips Respironics (Retiro global 2021–2023)*  
+### Caso 2 — *Ventiladores y CPAPs Philips Respironics (Retiro global 2021–2023)*  
 - **Normas involucradas:** IEC 60601-1 e ISO 14971.  
 - **Organismos:** *FDA (EE. UU.)* y *Comisión Europea (MDR, EUDAMED)*.  
 - **Descripción:** Fallos en materiales de espuma y control de software generaban liberación de partículas tóxicas y fallos de presión.  
@@ -165,7 +165,7 @@ Su adopción permite que los fabricantes obtengan certificaciones **CE (Europa)*
 - **Fuente oficial:** [FDA – Philips Respironics Ventilator Recall](https://www.fda.gov/medical-devices/medical-device-recalls/philips-respironics-issues-recall)  
   [Comisión Europea – EUDAMED Incident Reports](https://ec.europa.eu/tools/eudamed/)
 
-### ⚙️ Caso 3 — *Marcapasos Abbott (St. Jude Medical) – Vulnerabilidades de ciberseguridad (FDA 2017)*  
+### Caso 3 — *Marcapasos Abbott (St. Jude Medical) – Vulnerabilidades de ciberseguridad (FDA 2017)*  
 - **Normas involucradas:** IEC 60601-1, IEC 81001-5-1 (ciberseguridad) e ISO 14971.  
 - **Organismos:** *FDA* y *Department of Homeland Security (DHS, ICS-CERT)*.  
 - **Descripción:** Vulnerabilidades en la comunicación inalámbrica del firmware permitían modificar parámetros del marcapasos de forma remota.  
